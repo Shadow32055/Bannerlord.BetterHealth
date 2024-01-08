@@ -6,13 +6,13 @@
 	<MultiplayerModule value="false"/>
 	<Url value="https://www.nexusmods.com/mountandblade2bannerlord/mods/3434"/>
 	<DependedModules>
+		<DependedModule Id="BetterCore"/>
 		<DependedModule Id="Bannerlord.Harmony"/>
 		<DependedModule Id="Bannerlord.MBOptionScreen"/>
 		<DependedModule Id="Native"/>
 		<DependedModule Id="SandBoxCore"/>
 		<DependedModule Id="Sandbox"/>
 		<DependedModule Id="StoryMode"/>
-		<DependedModule Id="BetterCore" DependentVersion="v1.0"/>
 	</DependedModules>
 	<DependedModuleMetadata>
 		<DependedModuleMetadata id="Bannerlord.Harmony" order="LoadBeforeThis"/>

@@ -26,8 +26,8 @@ namespace BetterHealth.Settings {
         public float PlayerPercent { get; set; } = 0;
 
         [SettingPropertyGroup(RefValues.PlayerText)]
-        [SettingPropertyFloatingInteger(RefValues.FlatText, 1f, 1000f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.FlatHint)]
-        public float PlayerFlatAmount { get; set; } = 0;
+        [SettingPropertyInteger(RefValues.FlatText, 1, 1000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.FlatHint)]
+        public int PlayerFlatAmount { get; set; } = 0;
 
 
 
@@ -36,7 +36,7 @@ namespace BetterHealth.Settings {
         public bool PlayerVigorSkills { get; set; } = false;
 
         [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.VigorSkillText)]
-        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 100f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
+        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
         public float PlayerVigorHealthValue { get; set; } = .2f;
 
         [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.VigorSkillText)]
@@ -58,7 +58,7 @@ namespace BetterHealth.Settings {
         public bool PlayerControlSkills { get; set; } = false;
 
         [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.ControlSkillText)]
-        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 100f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
+        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
         public float PlayerControlHealthValue { get; set; } = .2f;
 
         [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.ControlSkillText)]
@@ -80,7 +80,7 @@ namespace BetterHealth.Settings {
         public bool PlayerEnduranceSkills { get; set; } = false;
 
         [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.EnduranceSkillText)]
-        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 100f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
+        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
         public float PlayerEnduranceHealthValue { get; set; } = .2f;
 
         [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.EnduranceSkillText)]
@@ -108,8 +108,8 @@ namespace BetterHealth.Settings {
         public float HeroPercent { get; set; } = 0;
 
         [SettingPropertyGroup(RefValues.HeroesText)]
-        [SettingPropertyFloatingInteger(RefValues.FlatText, 1f, 1000f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.FlatHint)]
-        public float HeroFlatAmount { get; set; } = 0;
+        [SettingPropertyInteger(RefValues.FlatText, 1, 1000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.FlatHint)]
+        public int HeroFlatAmount { get; set; } = 0;
 
 
 
@@ -118,7 +118,7 @@ namespace BetterHealth.Settings {
         public bool HeroVigorSkills { get; set; } = false;
 
         [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.VigorSkillText)]
-        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 100f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
+        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
         public float HeroVigorHealthValue { get; set; } = .2f;
 
         [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.VigorSkillText)]
@@ -140,7 +140,7 @@ namespace BetterHealth.Settings {
         public bool HeroControlSkills { get; set; } = false;
 
         [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.ControlSkillText)]
-        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 100f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
+        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
         public float HeroControlHealthValue { get; set; } = .2f;
 
         [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.ControlSkillText)]
@@ -162,7 +162,7 @@ namespace BetterHealth.Settings {
         public bool HeroEnduranceSkills { get; set; } = false;
 
         [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.EnduranceSkillText)]
-        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 100f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
+        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
         public float HeroEnduranceHealthValue { get; set; } = .2f;
 
         [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.EnduranceSkillText)]
@@ -216,7 +216,7 @@ namespace BetterHealth.Settings {
         public bool TroopVigorSkills { get; set; } = false;
 
         [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.VigorSkillText)]
-        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 100f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
+        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
         public float TroopVigorHealthValue { get; set; } = .2f;
 
         [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.VigorSkillText)]
@@ -238,7 +238,7 @@ namespace BetterHealth.Settings {
         public bool TroopControlSkills { get; set; } = false;
 
         [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.ControlSkillText)]
-        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 100f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
+        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
         public float TroopControlHealthValue { get; set; } = .2f;
 
         [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.ControlSkillText)]
@@ -260,7 +260,7 @@ namespace BetterHealth.Settings {
         public bool TroopEnduranceSkills { get; set; } = false;
 
         [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.EnduranceSkillText)]
-        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 100f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
+        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
         public float TroopEnduranceHealthValue { get; set; } = .2f;
 
         [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.EnduranceSkillText)]
