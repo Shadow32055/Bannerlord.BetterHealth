@@ -13,7 +13,7 @@ namespace BetterHealth.Patches {
     internal class DefaultCharacterStatsModelPatch {
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(DefaultCharacterStatsModel), "MaxHitpoints")]
+        [HarmonyPatch(typeof(DefaultCharacterStatsModel), nameof(DefaultCharacterStatsModel.MaxHitpoints))]
         public static void MaxHitpointsPrefix(ref ExplainedNumber __result, ref DefaultCharacterStatsModel __instance, CharacterObject character, bool includeDescriptions = false) {
             try {
                 int tier = __instance.GetTier(character);
