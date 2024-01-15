@@ -22,11 +22,11 @@ namespace BetterHealth.Settings {
         public int PlayerBaseHealth { get; set; } = 100;
 
         [SettingPropertyGroup(RefValues.PlayerText)]
-        [SettingPropertyFloatingInteger(RefValues.PercentText, 0.01f, 1f, "0.0 %", Order = 0, RequireRestart = false, HintText = RefValues.PercentHint)]
+        [SettingPropertyFloatingInteger(RefValues.PercentText, 0f, 0.05f, "0.0 %", Order = 0, RequireRestart = false, HintText = RefValues.PercentHint)]
         public float PlayerPercent { get; set; } = 0;
 
         [SettingPropertyGroup(RefValues.PlayerText)]
-        [SettingPropertyInteger(RefValues.FlatText, 1, 1000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.FlatHint)]
+        [SettingPropertyInteger(RefValues.FlatText, 0, 1000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.FlatHint)]
         public int PlayerFlatAmount { get; set; } = 0;
 
 
@@ -104,11 +104,11 @@ namespace BetterHealth.Settings {
         public int HeroBaseHealth { get; set; } = 100;
 
         [SettingPropertyGroup(RefValues.HeroesText)]
-        [SettingPropertyFloatingInteger(RefValues.PercentText, 0.01f, 1f, "0.0 %", Order = 0, RequireRestart = false, HintText = RefValues.PercentHint)]
+        [SettingPropertyFloatingInteger(RefValues.PercentText, 0f, 0.05f, "0.0 %", Order = 0, RequireRestart = false, HintText = RefValues.PercentHint)]
         public float HeroPercent { get; set; } = 0;
 
         [SettingPropertyGroup(RefValues.HeroesText)]
-        [SettingPropertyInteger(RefValues.FlatText, 1, 1000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.FlatHint)]
+        [SettingPropertyInteger(RefValues.FlatText, 0, 1000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.FlatHint)]
         public int HeroFlatAmount { get; set; } = 0;
 
 
