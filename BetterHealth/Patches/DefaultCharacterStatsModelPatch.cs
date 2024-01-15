@@ -90,16 +90,18 @@ namespace BetterHealth.Patches {
                     }
 
 
-                    float playerBonus = (float)(character.Level * BetterHealth.Settings.PlayerPercent);
-                    if (playerBonus > 0) {
-                        result.AddFactor(playerBonus, new TextObject(RefValues.PercentText, null));
-                    }
 
-                    playerBonus = character.Level * BetterHealth.Settings.PlayerFlatAmount;
+                    float playerBonus = character.Level * BetterHealth.Settings.PlayerFlatAmount;
                     if (playerBonus > 0) {
                         result.Add(playerBonus, new TextObject(RefValues.FlatText, null));
                     }
-                
+
+                    //playerBonus = (float)(character.Level * BetterHealth.Settings.PlayerPercent);
+                    playerBonus = (BetterHealth.Settings.PlayerBaseHealth * (float)Math.Pow((1+ BetterHealth.Settings.PlayerPercent), character.Level)) - BetterHealth.Settings.PlayerBaseHealth;
+                    if (playerBonus > 0) {
+                        result.Add(playerBonus, new TextObject(RefValues.PercentText, null));
+                    }
+
                 } else if (character.IsHero) {
 
                     if (BetterHealth.Settings.HeroVigorSkills) {
@@ -118,14 +120,14 @@ namespace BetterHealth.Patches {
                     }
 
 
-                    float heroBonus = (float)(character.Level * BetterHealth.Settings.HeroPercent);
-                    if (heroBonus > 0) {
-                        result.AddFactor(heroBonus, new TextObject(RefValues.PercentText, null));
-                    }
-
-                    heroBonus = character.Level * BetterHealth.Settings.HeroFlatAmount;
+                    float heroBonus = character.Level * BetterHealth.Settings.HeroFlatAmount;
                     if (heroBonus > 0) {
                         result.Add(heroBonus, new TextObject(RefValues.FlatText, null));
+                    }
+
+                    heroBonus = (BetterHealth.Settings.HeroBaseHealth * (float)Math.Pow((1 + BetterHealth.Settings.HeroPercent), character.Level)) - BetterHealth.Settings.HeroBaseHealth;
+                    if (heroBonus > 0) {
+                        result.Add(heroBonus, new TextObject(RefValues.PercentText, null));
                     }
 
                 } else {
