@@ -39,12 +39,19 @@
         public const string PercentHint                 = "{=BHL_4XIzLW}Increase of health per level as percent";
 
         public const string FlatText                    = "{=BHL_mnEEY6}Flat Bonus";
-        public const string FlatHint                    = "{=BHL_otgBbg}Increase of health per level as flat amount";
+        public const string FlatHint                    = "{=BHL_o46B5g}Increase of health per level as flat amount";
 
         public const string BaseHealthText              = "{=BHL_6c8ZVc}Base Health";
         public const string BaseHealthHint              = "{=BHL_VXzieI}Set the base health";
 
-        public const string TierText                    = "{=BHL_wNdCQj}Tier";
+        public const string Tier1Text                   = "{=BHL_Jt2M47}Tier 1 base health";
+        public const string Tier2Text                   = "{=BHL_05oB0c}Tier 2 base health";
+        public const string Tier3Text                   = "{=BHL_oAypZu}Tier 3 base health";
+        public const string Tier4Text                   = "{=BHL_GVNxJS}Tier 4 base health";
+        public const string Tier5Text                   = "{=BHL_WNvzUx}Tier 5 base health";
+        public const string Tier6Text                   = "{=BHL_2pMhqw}Tier 6 base health";
+        public const string Tier7Text                   = "{=BHL_xHHuEi}Tier 7 base health";
+
         public const string TierBaseHealthHint          = "{=BHL_gBBK3L}Set the base health for all troops wthin this tier (friendly and enemy)";
     }
 }

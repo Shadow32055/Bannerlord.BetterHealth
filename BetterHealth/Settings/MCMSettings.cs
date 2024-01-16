@@ -182,31 +182,31 @@ namespace BetterHealth.Settings {
         /// </summary>
 
         [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.BaseHealthText)]
-        [SettingPropertyInteger(RefValues.TierText + " 1 " + RefValues.BaseHealthText, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
+        [SettingPropertyInteger(RefValues.Tier1Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
         public int TroopBaseHealthT1 { get; set; } = 100;
 
         [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.BaseHealthText)]
-        [SettingPropertyInteger(RefValues.TierText + " 2 " + RefValues.BaseHealthText, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
+        [SettingPropertyInteger(RefValues.Tier2Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
         public int TroopBaseHealthT2 { get; set; } = 100;
 
         [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.BaseHealthText)]
-        [SettingPropertyInteger(RefValues.TierText + " 3 " + RefValues.BaseHealthText, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
+        [SettingPropertyInteger(RefValues.Tier3Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
         public int TroopBaseHealthT3 { get; set; } = 100;
 
         [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.BaseHealthText)]
-        [SettingPropertyInteger(RefValues.TierText + " 4 " + RefValues.BaseHealthText, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
+        [SettingPropertyInteger(RefValues.Tier4Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
         public int TroopBaseHealthT4 { get; set; } = 100;
 
         [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.BaseHealthText)]
-        [SettingPropertyInteger(RefValues.TierText + " 5 " + RefValues.BaseHealthText, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
+        [SettingPropertyInteger(RefValues.Tier5Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
         public int TroopBaseHealthT5 { get; set; } = 100;
 
         [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.BaseHealthText)]
-        [SettingPropertyInteger(RefValues.TierText + " 6 " + RefValues.BaseHealthText, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
+        [SettingPropertyInteger(RefValues.Tier6Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
         public int TroopBaseHealthT6 { get; set; } = 100;
 
         [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.BaseHealthText)]
-        [SettingPropertyInteger(RefValues.TierText + " 7 " + RefValues.BaseHealthText, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
+        [SettingPropertyInteger(RefValues.Tier7Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
         public int TroopBaseHealthT7 { get; set; } = 100;
 
 
