@@ -15,6 +15,9 @@
 		<DependedModule Id="CustomBattle" DependentVersion="v1.0.0"/>
 		<DependedModule Id="BetterCore" DependentVersion="v1.0.0"/>
 	</DependedModules>
+	<ModulesToLoadAfterThis>
+		<Module Id="BetterAttributes"/>
+	</ModulesToLoadAfterThis>
 	<SubModules>
 		<SubModule>
 			<Name value="BetterHealth"/>
