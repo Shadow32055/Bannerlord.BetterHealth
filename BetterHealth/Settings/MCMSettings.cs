@@ -1,278 +1,278 @@
 ﻿using MCM.Abstractions.Attributes;
 using MCM.Abstractions.Attributes.v2;
 using MCM.Abstractions.Base.Global;
-using BetterHealth.Localization;
 
-namespace BetterHealth.Settings {
+namespace BetterHealth.Settings
+{
 
     public class MCMSettings : AttributeGlobalSettings<MCMSettings> {
 
-        [SettingPropertyGroup(RefValues.MiscText, GroupOrder = 4)]
-        [SettingPropertyFloatingInteger(RefValues.RegenText, 0f, 10f, "0.0 %", Order = 0, RequireRestart = false, HintText = RefValues.RegenHint)]
-        public float CampaignHealthRegenMultiplier { get; set; } = 1;
+        [SettingPropertyGroup(Strings.MiscText, GroupOrder = 4)]
+        [SettingPropertyInteger(Strings.RegenText, 0, 10000, "0", Order = 0, RequireRestart = false, HintText = Strings.RegenHint)]
+        public int CampaignHealthRegen { get; set; } = 10;
 
-        [SettingPropertyGroup(RefValues.MiscText, GroupOrder = 4)]
-        [SettingPropertyBool(RefValues.HealthOverflowText, Order = 1, RequireRestart = false, HintText = RefValues.HealthOverflowHint)]
+        [SettingPropertyGroup(Strings.MiscText, GroupOrder = 4)]
+        [SettingPropertyBool(Strings.HealthOverflowText, Order = 1, RequireRestart = false, HintText = Strings.HealthOverflowHint)]
         public bool ApplyHealthOverflowFix { get; set; } = false;
 
 
 
-        [SettingPropertyGroup(RefValues.PlayerText)]
-        [SettingPropertyInteger(RefValues.BaseHealthText, 1, 2000, "0", Order = 0, RequireRestart = false, HintText = RefValues.BaseHealthHint)]
+        [SettingPropertyGroup(Strings.PlayerText)]
+        [SettingPropertyInteger(Strings.BaseHealthText, 1, 2000, "0", Order = 0, RequireRestart = false, HintText = Strings.BaseHealthHint)]
         public int PlayerBaseHealth { get; set; } = 100;
 
-        [SettingPropertyGroup(RefValues.PlayerText)]
-        [SettingPropertyFloatingInteger(RefValues.PercentText, 0f, 0.05f, "0.0 %", Order = 0, RequireRestart = false, HintText = RefValues.PercentHint)]
+        [SettingPropertyGroup(Strings.PlayerText)]
+        [SettingPropertyFloatingInteger(Strings.PercentText, 0f, 0.05f, "0.0 %", Order = 0, RequireRestart = false, HintText = Strings.PercentHint)]
         public float PlayerPercent { get; set; } = 0;
 
-        [SettingPropertyGroup(RefValues.PlayerText)]
-        [SettingPropertyInteger(RefValues.FlatText, 0, 1000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.FlatHint)]
+        [SettingPropertyGroup(Strings.PlayerText)]
+        [SettingPropertyInteger(Strings.FlatText, 0, 1000, "0 HP", Order = 0, RequireRestart = false, HintText = Strings.FlatHint)]
         public int PlayerFlatAmount { get; set; } = 0;
 
 
 
-        [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.VigorSkillText)]
-        [SettingPropertyBool(RefValues.GenericSkillText, IsToggle = true, Order = 1, RequireRestart = false, HintText = RefValues.AttributeHint)]
+        [SettingPropertyGroup(Strings.PlayerText + "/" + Strings.VigorSkillText)]
+        [SettingPropertyBool(Strings.GenericSkillText, IsToggle = true, Order = 1, RequireRestart = false, HintText = Strings.AttributeHint)]
         public bool PlayerVigorSkills { get; set; } = false;
 
-        [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.VigorSkillText)]
-        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
+        [SettingPropertyGroup(Strings.PlayerText + "/" + Strings.VigorSkillText)]
+        [SettingPropertyFloatingInteger(Strings.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = Strings.HealthPerSPHint)]
         public float PlayerVigorHealthValue { get; set; } = .2f;
 
-        [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.VigorSkillText)]
-        [SettingPropertyBool(RefValues.OneHandedText, Order = 1, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.PlayerText + "/" + Strings.VigorSkillText)]
+        [SettingPropertyBool(Strings.OneHandedText, Order = 1, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool PlayerVigorOneHandedSkill { get; set; } = true;
 
-        [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.VigorSkillText)]
-        [SettingPropertyBool(RefValues.TwoHandedText, Order = 2, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.PlayerText + "/" + Strings.VigorSkillText)]
+        [SettingPropertyBool(Strings.TwoHandedText, Order = 2, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool PlayerVigorTwoHandedSkill { get; set; } = true;
 
-        [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.VigorSkillText)]
-        [SettingPropertyBool(RefValues.PoleArmText, Order = 3, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.PlayerText + "/" + Strings.VigorSkillText)]
+        [SettingPropertyBool(Strings.PoleArmText, Order = 3, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool PlayerVigorPolearmSkill { get; set; } = true;
 
 
 
-        [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.ControlSkillText)]
-        [SettingPropertyBool(RefValues.GenericSkillText, IsToggle = true, Order = 2, RequireRestart = false, HintText = RefValues.AttributeHint)]
+        [SettingPropertyGroup(Strings.PlayerText + "/" + Strings.ControlSkillText)]
+        [SettingPropertyBool(Strings.GenericSkillText, IsToggle = true, Order = 2, RequireRestart = false, HintText = Strings.AttributeHint)]
         public bool PlayerControlSkills { get; set; } = false;
 
-        [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.ControlSkillText)]
-        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
+        [SettingPropertyGroup(Strings.PlayerText + "/" + Strings.ControlSkillText)]
+        [SettingPropertyFloatingInteger(Strings.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = Strings.HealthPerSPHint)]
         public float PlayerControlHealthValue { get; set; } = .2f;
 
-        [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.ControlSkillText)]
-        [SettingPropertyBool(RefValues.BowText, Order = 1, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.PlayerText + "/" + Strings.ControlSkillText)]
+        [SettingPropertyBool(Strings.BowText, Order = 1, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool PlayerControlBowSkill { get; set; } = true;
 
-        [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.ControlSkillText)]
-        [SettingPropertyBool(RefValues.CrossbowText, Order = 2, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.PlayerText + "/" + Strings.ControlSkillText)]
+        [SettingPropertyBool(Strings.CrossbowText, Order = 2, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool PlayerControlCrossbowSkill { get; set; } = true;
 
-        [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.ControlSkillText)]
-        [SettingPropertyBool(RefValues.ThrowingText, Order = 3, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.PlayerText + "/" + Strings.ControlSkillText)]
+        [SettingPropertyBool(Strings.ThrowingText, Order = 3, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool PlayerControlThrowingSkill { get; set; } = true;
 
 
 
-        [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.EnduranceSkillText)]
-        [SettingPropertyBool(RefValues.GenericSkillText, IsToggle = true, Order = 3, RequireRestart = false, HintText = RefValues.AttributeHint)]
+        [SettingPropertyGroup(Strings.PlayerText + "/" + Strings.EnduranceSkillText)]
+        [SettingPropertyBool(Strings.GenericSkillText, IsToggle = true, Order = 3, RequireRestart = false, HintText = Strings.AttributeHint)]
         public bool PlayerEnduranceSkills { get; set; } = false;
 
-        [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.EnduranceSkillText)]
-        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
+        [SettingPropertyGroup(Strings.PlayerText + "/" + Strings.EnduranceSkillText)]
+        [SettingPropertyFloatingInteger(Strings.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = Strings.HealthPerSPHint)]
         public float PlayerEnduranceHealthValue { get; set; } = .2f;
 
-        [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.EnduranceSkillText)]
-        [SettingPropertyBool(RefValues.RidingText, Order = 1, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.PlayerText + "/" + Strings.EnduranceSkillText)]
+        [SettingPropertyBool(Strings.RidingText, Order = 1, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool PlayerEnduranceRidingSkill { get; set; } = true;
 
-        [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.EnduranceSkillText)]
-        [SettingPropertyBool(RefValues.AthleticsText, Order = 2, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.PlayerText + "/" + Strings.EnduranceSkillText)]
+        [SettingPropertyBool(Strings.AthleticsText, Order = 2, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool PlayerEnduranceAthleticsSkill { get; set; } = true;
 
-        [SettingPropertyGroup(RefValues.PlayerText + "/" + RefValues.EnduranceSkillText)]
-        [SettingPropertyBool(RefValues.SmithingText, Order = 3, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.PlayerText + "/" + Strings.EnduranceSkillText)]
+        [SettingPropertyBool(Strings.SmithingText, Order = 3, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool PlayerEnduranceSmithingSkill { get; set; } = true;
 
         /// <summary>
         /// HEROES
         /// </summary>
 
-        [SettingPropertyGroup(RefValues.HeroesText)]
-        [SettingPropertyInteger(RefValues.BaseHealthText, 1, 2000, "0", Order = 0, RequireRestart = false, HintText = RefValues.BaseHealthHint)]
+        [SettingPropertyGroup(Strings.HeroesText)]
+        [SettingPropertyInteger(Strings.BaseHealthText, 1, 2000, "0", Order = 0, RequireRestart = false, HintText = Strings.BaseHealthHint)]
         public int HeroBaseHealth { get; set; } = 100;
 
-        [SettingPropertyGroup(RefValues.HeroesText)]
-        [SettingPropertyFloatingInteger(RefValues.PercentText, 0f, 0.05f, "0.0 %", Order = 0, RequireRestart = false, HintText = RefValues.PercentHint)]
+        [SettingPropertyGroup(Strings.HeroesText)]
+        [SettingPropertyFloatingInteger(Strings.PercentText, 0f, 0.05f, "0.0 %", Order = 0, RequireRestart = false, HintText = Strings.PercentHint)]
         public float HeroPercent { get; set; } = 0;
 
-        [SettingPropertyGroup(RefValues.HeroesText)]
-        [SettingPropertyInteger(RefValues.FlatText, 0, 1000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.FlatHint)]
+        [SettingPropertyGroup(Strings.HeroesText)]
+        [SettingPropertyInteger(Strings.FlatText, 0, 1000, "0 HP", Order = 0, RequireRestart = false, HintText = Strings.FlatHint)]
         public int HeroFlatAmount { get; set; } = 0;
 
 
 
-        [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.VigorSkillText)]
-        [SettingPropertyBool(RefValues.GenericSkillText, IsToggle = true, Order = 1, RequireRestart = false, HintText = RefValues.AttributeHint)]
+        [SettingPropertyGroup(Strings.HeroesText + "/" + Strings.VigorSkillText)]
+        [SettingPropertyBool(Strings.GenericSkillText, IsToggle = true, Order = 1, RequireRestart = false, HintText = Strings.AttributeHint)]
         public bool HeroVigorSkills { get; set; } = false;
 
-        [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.VigorSkillText)]
-        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
+        [SettingPropertyGroup(Strings.HeroesText + "/" + Strings.VigorSkillText)]
+        [SettingPropertyFloatingInteger(Strings.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = Strings.HealthPerSPHint)]
         public float HeroVigorHealthValue { get; set; } = .2f;
 
-        [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.VigorSkillText)]
-        [SettingPropertyBool(RefValues.OneHandedText, Order = 1, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.HeroesText + "/" + Strings.VigorSkillText)]
+        [SettingPropertyBool(Strings.OneHandedText, Order = 1, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool HeroVigorOneHandedSkill { get; set; } = true;
 
-        [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.VigorSkillText)]
-        [SettingPropertyBool(RefValues.TwoHandedText, Order = 2, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.HeroesText + "/" + Strings.VigorSkillText)]
+        [SettingPropertyBool(Strings.TwoHandedText, Order = 2, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool HeroVigorTwoHandedSkill { get; set; } = true;
 
-        [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.VigorSkillText)]
-        [SettingPropertyBool(RefValues.PoleArmText, Order = 3, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.HeroesText + "/" + Strings.VigorSkillText)]
+        [SettingPropertyBool(Strings.PoleArmText, Order = 3, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool HeroVigorPolearmSkill { get; set; } = true;
 
 
 
-        [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.ControlSkillText)]
-        [SettingPropertyBool(RefValues.GenericSkillText, IsToggle = true, Order = 2, RequireRestart = false, HintText = RefValues.AttributeHint)]
+        [SettingPropertyGroup(Strings.HeroesText + "/" + Strings.ControlSkillText)]
+        [SettingPropertyBool(Strings.GenericSkillText, IsToggle = true, Order = 2, RequireRestart = false, HintText = Strings.AttributeHint)]
         public bool HeroControlSkills { get; set; } = false;
 
-        [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.ControlSkillText)]
-        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
+        [SettingPropertyGroup(Strings.HeroesText + "/" + Strings.ControlSkillText)]
+        [SettingPropertyFloatingInteger(Strings.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = Strings.HealthPerSPHint)]
         public float HeroControlHealthValue { get; set; } = .2f;
 
-        [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.ControlSkillText)]
-        [SettingPropertyBool(RefValues.BowText, Order = 1, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.HeroesText + "/" + Strings.ControlSkillText)]
+        [SettingPropertyBool(Strings.BowText, Order = 1, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool HeroControlBowSkill { get; set; } = true;
 
-        [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.ControlSkillText)]
-        [SettingPropertyBool(RefValues.CrossbowText, Order = 2, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.HeroesText + "/" + Strings.ControlSkillText)]
+        [SettingPropertyBool(Strings.CrossbowText, Order = 2, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool HeroControlCrossbowSkill { get; set; } = true;
 
-        [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.ControlSkillText)]
-        [SettingPropertyBool(RefValues.ThrowingText, Order = 3, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.HeroesText + "/" + Strings.ControlSkillText)]
+        [SettingPropertyBool(Strings.ThrowingText, Order = 3, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool HeroControlThrowingSkill { get; set; } = true;
 
 
 
-        [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.EnduranceSkillText)]
-        [SettingPropertyBool(RefValues.GenericSkillText, IsToggle = true, Order = 3, RequireRestart = false, HintText = RefValues.AttributeHint)]
+        [SettingPropertyGroup(Strings.HeroesText + "/" + Strings.EnduranceSkillText)]
+        [SettingPropertyBool(Strings.GenericSkillText, IsToggle = true, Order = 3, RequireRestart = false, HintText = Strings.AttributeHint)]
         public bool HeroEnduranceSkills { get; set; } = false;
 
-        [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.EnduranceSkillText)]
-        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
+        [SettingPropertyGroup(Strings.HeroesText + "/" + Strings.EnduranceSkillText)]
+        [SettingPropertyFloatingInteger(Strings.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = Strings.HealthPerSPHint)]
         public float HeroEnduranceHealthValue { get; set; } = .2f;
 
-        [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.EnduranceSkillText)]
-        [SettingPropertyBool(RefValues.RidingText, Order = 1, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.HeroesText + "/" + Strings.EnduranceSkillText)]
+        [SettingPropertyBool(Strings.RidingText, Order = 1, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool HeroEnduranceRidingSkill { get; set; } = true;
 
-        [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.EnduranceSkillText)]
-        [SettingPropertyBool(RefValues.AthleticsText, Order = 2, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.HeroesText + "/" + Strings.EnduranceSkillText)]
+        [SettingPropertyBool(Strings.AthleticsText, Order = 2, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool HeroEnduranceAthleticsSkill { get; set; } = true;
 
-        [SettingPropertyGroup(RefValues.HeroesText + "/" + RefValues.EnduranceSkillText)]
-        [SettingPropertyBool(RefValues.SmithingText, Order = 3, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.HeroesText + "/" + Strings.EnduranceSkillText)]
+        [SettingPropertyBool(Strings.SmithingText, Order = 3, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool HeroEnduranceSmithingSkill { get; set; } = true;
 
         /// <summary>
         /// TROOPS
         /// </summary>
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.BaseHealthText)]
-        [SettingPropertyInteger(RefValues.Tier1Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.BaseHealthText)]
+        [SettingPropertyInteger(Strings.Tier1Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = Strings.TierBaseHealthHint)]
         public int TroopBaseHealthT1 { get; set; } = 100;
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.BaseHealthText)]
-        [SettingPropertyInteger(RefValues.Tier2Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.BaseHealthText)]
+        [SettingPropertyInteger(Strings.Tier2Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = Strings.TierBaseHealthHint)]
         public int TroopBaseHealthT2 { get; set; } = 100;
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.BaseHealthText)]
-        [SettingPropertyInteger(RefValues.Tier3Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.BaseHealthText)]
+        [SettingPropertyInteger(Strings.Tier3Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = Strings.TierBaseHealthHint)]
         public int TroopBaseHealthT3 { get; set; } = 100;
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.BaseHealthText)]
-        [SettingPropertyInteger(RefValues.Tier4Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.BaseHealthText)]
+        [SettingPropertyInteger(Strings.Tier4Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = Strings.TierBaseHealthHint)]
         public int TroopBaseHealthT4 { get; set; } = 100;
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.BaseHealthText)]
-        [SettingPropertyInteger(RefValues.Tier5Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.BaseHealthText)]
+        [SettingPropertyInteger(Strings.Tier5Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = Strings.TierBaseHealthHint)]
         public int TroopBaseHealthT5 { get; set; } = 100;
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.BaseHealthText)]
-        [SettingPropertyInteger(RefValues.Tier6Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.BaseHealthText)]
+        [SettingPropertyInteger(Strings.Tier6Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = Strings.TierBaseHealthHint)]
         public int TroopBaseHealthT6 { get; set; } = 100;
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.BaseHealthText)]
-        [SettingPropertyInteger(RefValues.Tier7Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = RefValues.TierBaseHealthHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.BaseHealthText)]
+        [SettingPropertyInteger(Strings.Tier7Text, 1, 2000, "0 HP", Order = 0, RequireRestart = false, HintText = Strings.TierBaseHealthHint)]
         public int TroopBaseHealthT7 { get; set; } = 100;
 
 
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.VigorSkillText)]
-        [SettingPropertyBool(RefValues.GenericSkillText, IsToggle = true, Order = 1, RequireRestart = false, HintText = RefValues.AttributeHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.VigorSkillText)]
+        [SettingPropertyBool(Strings.GenericSkillText, IsToggle = true, Order = 1, RequireRestart = false, HintText = Strings.AttributeHint)]
         public bool TroopVigorSkills { get; set; } = false;
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.VigorSkillText)]
-        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.VigorSkillText)]
+        [SettingPropertyFloatingInteger(Strings.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = Strings.HealthPerSPHint)]
         public float TroopVigorHealthValue { get; set; } = .2f;
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.VigorSkillText)]
-        [SettingPropertyBool(RefValues.OneHandedText, Order = 1, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.VigorSkillText)]
+        [SettingPropertyBool(Strings.OneHandedText, Order = 1, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool TroopVigorOneHandedSkill { get; set; } = true;
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.VigorSkillText)]
-        [SettingPropertyBool(RefValues.TwoHandedText, Order = 2, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.VigorSkillText)]
+        [SettingPropertyBool(Strings.TwoHandedText, Order = 2, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool TroopVigorTwoHandedSkill { get; set; } = true;
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.VigorSkillText)]
-        [SettingPropertyBool(RefValues.PoleArmText, Order = 3, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.VigorSkillText)]
+        [SettingPropertyBool(Strings.PoleArmText, Order = 3, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool TroopVigorPolearmSkill { get; set; } = true;
 
 
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.ControlSkillText)]
-        [SettingPropertyBool(RefValues.GenericSkillText, IsToggle = true, Order = 2, RequireRestart = false, HintText = RefValues.AttributeHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.ControlSkillText)]
+        [SettingPropertyBool(Strings.GenericSkillText, IsToggle = true, Order = 2, RequireRestart = false, HintText = Strings.AttributeHint)]
         public bool TroopControlSkills { get; set; } = false;
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.ControlSkillText)]
-        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.ControlSkillText)]
+        [SettingPropertyFloatingInteger(Strings.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = Strings.HealthPerSPHint)]
         public float TroopControlHealthValue { get; set; } = .2f;
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.ControlSkillText)]
-        [SettingPropertyBool(RefValues.BowText, Order = 1, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.ControlSkillText)]
+        [SettingPropertyBool(Strings.BowText, Order = 1, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool TroopControlBowSkill { get; set; } = true;
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.ControlSkillText)]
-        [SettingPropertyBool(RefValues.CrossbowText, Order = 2, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.ControlSkillText)]
+        [SettingPropertyBool(Strings.CrossbowText, Order = 2, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool TroopControlCrossbowSkill { get; set; } = true;
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.ControlSkillText)]
-        [SettingPropertyBool(RefValues.ThrowingText, Order = 3, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.ControlSkillText)]
+        [SettingPropertyBool(Strings.ThrowingText, Order = 3, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool TroopControlThrowingSkill { get; set; } = true;
 
 
         
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.EnduranceSkillText)]
-        [SettingPropertyBool(RefValues.GenericSkillText, IsToggle = true, Order = 3, RequireRestart = false, HintText = RefValues.AttributeHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.EnduranceSkillText)]
+        [SettingPropertyBool(Strings.GenericSkillText, IsToggle = true, Order = 3, RequireRestart = false, HintText = Strings.AttributeHint)]
         public bool TroopEnduranceSkills { get; set; } = false;
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.EnduranceSkillText)]
-        [SettingPropertyFloatingInteger(RefValues.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = RefValues.HealthPerSPHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.EnduranceSkillText)]
+        [SettingPropertyFloatingInteger(Strings.PointPerSkillText, 0f, 50f, "0.0 HP", Order = 0, RequireRestart = false, HintText = Strings.HealthPerSPHint)]
         public float TroopEnduranceHealthValue { get; set; } = .2f;
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.EnduranceSkillText)]
-        [SettingPropertyBool(RefValues.RidingText, Order = 1, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.EnduranceSkillText)]
+        [SettingPropertyBool(Strings.RidingText, Order = 1, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool TroopEnduranceRidingSkill { get; set; } = true;
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.EnduranceSkillText)]
-        [SettingPropertyBool(RefValues.AthleticsText, Order = 2, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.EnduranceSkillText)]
+        [SettingPropertyBool(Strings.AthleticsText, Order = 2, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool TroopEnduranceAthleticsSkill { get; set; } = true;
 
-        [SettingPropertyGroup(RefValues.TroopsText + "/" + RefValues.EnduranceSkillText)]
-        [SettingPropertyBool(RefValues.SmithingText, Order = 3, RequireRestart = false, HintText = RefValues.SkillImpactHint)]
+        [SettingPropertyGroup(Strings.TroopsText + "/" + Strings.EnduranceSkillText)]
+        [SettingPropertyBool(Strings.SmithingText, Order = 3, RequireRestart = false, HintText = Strings.SkillImpactHint)]
         public bool TroopEnduranceSmithingSkill { get; set; } = true;
         
 

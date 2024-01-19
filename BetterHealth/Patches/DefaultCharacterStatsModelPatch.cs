@@ -1,5 +1,4 @@
 ﻿using BetterCore.Utils;
-using BetterHealth.Localization;
 using HarmonyLib;
 using System;
 using TaleWorlds.CampaignSystem;
@@ -8,7 +7,8 @@ using TaleWorlds.CampaignSystem.GameComponents;
 using TaleWorlds.Core;
 using TaleWorlds.Localization;
 
-namespace BetterHealth.Patches {
+namespace BetterHealth.Patches
+{
     [HarmonyPatch]
     internal class DefaultCharacterStatsModelPatch {
 
@@ -93,13 +93,13 @@ namespace BetterHealth.Patches {
 
                     float playerBonus = character.Level * BetterHealth.Settings.PlayerFlatAmount;
                     if (playerBonus > 0) {
-                        result.Add(playerBonus, new TextObject(RefValues.FlatText, null));
+                        result.Add(playerBonus, new TextObject(Strings.FlatText, null));
                     }
 
                     //playerBonus = (float)(character.Level * BetterHealth.Settings.PlayerPercent);
                     playerBonus = (BetterHealth.Settings.PlayerBaseHealth * (float)Math.Pow((1+ BetterHealth.Settings.PlayerPercent), character.Level)) - BetterHealth.Settings.PlayerBaseHealth;
                     if (playerBonus > 0) {
-                        result.Add(playerBonus, new TextObject(RefValues.PercentText, null));
+                        result.Add(playerBonus, new TextObject(Strings.PercentText, null));
                     }
 
                 } else if (character.IsHero) {
@@ -122,12 +122,12 @@ namespace BetterHealth.Patches {
 
                     float heroBonus = character.Level * BetterHealth.Settings.HeroFlatAmount;
                     if (heroBonus > 0) {
-                        result.Add(heroBonus, new TextObject(RefValues.FlatText, null));
+                        result.Add(heroBonus, new TextObject(Strings.FlatText, null));
                     }
 
                     heroBonus = (BetterHealth.Settings.HeroBaseHealth * (float)Math.Pow((1 + BetterHealth.Settings.HeroPercent), character.Level)) - BetterHealth.Settings.HeroBaseHealth;
                     if (heroBonus > 0) {
-                        result.Add(heroBonus, new TextObject(RefValues.PercentText, null));
+                        result.Add(heroBonus, new TextObject(Strings.PercentText, null));
                     }
 
                 } else {
@@ -153,20 +153,20 @@ namespace BetterHealth.Patches {
                 float enduranceBonus = totalEnduranceSkills * enduranceBonusHealth;
 
                 if (vigorBonus > 0) {
-                    result.Add((float)Math.Round(vigorBonus), new TextObject(RefValues.VigorSkillText));
+                    result.Add((float)Math.Round(vigorBonus), new TextObject(Strings.VigorSkillText));
                 }
 
                 if (controlBonus > 0) {
-                    result.Add((float)Math.Round(totalControlSkills * controlBonusHealth), new TextObject(RefValues.ControlSkillText));
+                    result.Add((float)Math.Round(totalControlSkills * controlBonusHealth), new TextObject(Strings.ControlSkillText));
                 }
 
                 if (enduranceBonus > 0) {
-                    result.Add((float)Math.Round(totalEnduranceSkills * enduranceBonusHealth), new TextObject(RefValues.EnduranceSkillText));
+                    result.Add((float)Math.Round(totalEnduranceSkills * enduranceBonusHealth), new TextObject(Strings.EnduranceSkillText));
                 }
 
                 __result = result;
             } catch (Exception e) {
-                NotifyHelper.ReportError(BetterHealth.ModName, "DefaultCharacterStatsModel.MaxHitpoints threw exception: " + e);
+                NotifyHelper.WriteError(BetterHealth.ModName, "DefaultCharacterStatsModel.MaxHitpoints threw exception: " + e);
             }
         }
 

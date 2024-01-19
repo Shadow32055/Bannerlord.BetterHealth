@@ -11,7 +11,6 @@ namespace BetterHealth {
     public class BetterHealth : MBSubModuleBase {
 
         public static MCMSettings Settings { get; private set; }
-        public static HealthOverflow HealthOverflow { get; private set; }
         public static string ModName { get; private set; } = "BetterHealth";
 
         private bool isInitialized = false;
@@ -31,7 +30,7 @@ namespace BetterHealth {
 
                 isInitialized = true;
             } catch (Exception e) {
-                NotifyHelper.ReportError(ModName, "OnSubModuleLoad threw exception " + e);
+                NotifyHelper.WriteError(ModName, "OnSubModuleLoad threw exception " + e);
             }
         }
 
@@ -47,12 +46,12 @@ namespace BetterHealth {
 
                 Settings = MCMSettings.Instance ?? throw new NullReferenceException("Settings are null");
 
-                NotifyHelper.ChatMessage(ModName + " Loaded.", MsgType.Good);
+                NotifyHelper.WriteMessage(ModName + " Loaded.", MsgType.Good);
                 Integrations.BetterHealthLoaded = true;
 
                 isLoaded = true;
             } catch (Exception e) {
-                NotifyHelper.ReportError(ModName, "OnBeforeInitialModuleScreenSetAsRoot threw exception " + e);
+                NotifyHelper.WriteError(ModName, "OnBeforeInitialModuleScreenSetAsRoot threw exception " + e);
             }
         }
 
@@ -66,13 +65,12 @@ namespace BetterHealth {
                         CampaignGameStarter campaignGameStarter = (CampaignGameStarter)gameStarter;
 
                         if (campaignGameStarter != null) {
-                            HealthOverflow = new HealthOverflow();
                             campaignGameStarter.AddBehavior(new HealthOverflow());
                         }
                     }
                 }
             } catch (Exception e) {
-                NotifyHelper.ReportError(ModName, "OnGameStart threw exception " + e);
+                NotifyHelper.WriteError(ModName, "OnGameStart threw exception " + e);
             }
         }
     }

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="English" />
+	</tags>
+	<strings>
+		<string id="BHL_WSwISD" text="Player"/>
+		<string id="BHL_Y3b3aj" text="Heroes"/>
+		<string id="BHL_9ChrRZ" text="Troops"/>
+		<string id="BHL_3j8ads" text="Misc"/>
+
+		<string id="BHL_54h4ae" text="Apply HP bonus from this attributes skills"/>
+		<string id="BHL_FDPiPM" text="Should these skills impact health"/>
+
+		<string id="BHL_5v5KiC" text="Skill point health value"/>
+		<string id="BHL_gdQjpc" text="How much health to add per skill point."/>
+
+		<string id="BHL_ao3mn5" text="Vigor Skills"/>
+		<string id="BHL_ao334t" text="Control Skills"/>
+		<string id="BHL_0u3n5" text="Endurance Skills"/>
+
+		<string id="BHL_6c8Z71" text="One Handed"/>
+		<string id="BHL_m10dhr" text="Two Handed"/>
+		<string id="BHL_ghes01" text="Polearm"/>
+
+		<string id="BHL_6cZ3hd" text="Bow"/>
+		<string id="BHL_Q17RCl" text="Crossbow"/>
+		<string id="BHLfRju2b" text="Throwing"/>
+
+		<string id="BHL_6m2s71" text="Riding"/>
+		<string id="BHL_6Sk8jp" text="Athletics"/>
+		<string id="BHL_WocRk2" text="Smithing"/>
+
+		<string id="BHL_39fosn" text="Should this skill impact health bonus"/>
+
+		<string id="BHL_AN0I1h" text="Campaign Regen"/>
+		<string id="BHL_20Rrad" text="Amount of health restored each hour (I think?) out of battle (on campaign map). Zero disables healing outside of battles."/>
+
+		<string id="BHL_ANd4kh" text="Health Overflow Fix"/>
+		<string id="BHL_7ef52s" text="Optional patch to fix any max health/health issues. Simplys check every hero's health and if it's higher than their max, sets their health to their maximum."/>
+
+		<string id="BHL_lUwshM" text="Percent Bonus"/>
+		<string id="BHL_4XIzLW" text="Increase of health per level as percent"/>
+
+		<string id="BHL_mnEEY6" text="Flat Bonus"/>
+		<string id="BHL_o46B5g" text="Increase of health per level as flat amount"/>
+
+		<string id="BHL_6c8ZVc" text="Base Health"/>
+		<string id="BHL_VXzieI" text="Set the base health"/>
+
+		<string id="BHL_Jt2M47" text="Tier 1 base health"/>
+		<string id="BHL_05oB0c" text="Tier 2 base health"/>
+		<string id="BHL_oAypZu" text="Tier 3 base health"/>
+		<string id="BHL_GVNxJS" text="Tier 4 base health"/>
+		<string id="BHL_WNvzUx" text="Tier 5 base health"/>
+		<string id="BHL_2pMhqw" text="Tier 6 base health"/>
+		<string id="BHL_xHHuEi" text="Tier 7 base health"/>
+
+		<string id="BHL_gBBK3L" text="Set the base health for all troops wthin this tier (friendly and enemy)"/>
+	</strings>
+</base>
