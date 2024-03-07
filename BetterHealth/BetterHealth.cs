@@ -10,7 +10,7 @@ using TaleWorlds.MountAndBlade;
 namespace BetterHealth {
     public class BetterHealth : MBSubModuleBase {
 
-        public static MCMSettings Settings { get; private set; }
+        public static MCMSettings Settings { get; private set; } = new MCMSettings();
         public static string ModName { get; private set; } = "BetterHealth";
 
         private bool isInitialized = false;

@@ -7,14 +7,13 @@ using TaleWorlds.CampaignSystem.GameComponents;
 using TaleWorlds.Core;
 using TaleWorlds.Localization;
 
-namespace BetterHealth.Patches
-{
+namespace BetterHealth.Patches {
     [HarmonyPatch]
     internal class DefaultCharacterStatsModelPatch {
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(DefaultCharacterStatsModel), nameof(DefaultCharacterStatsModel.MaxHitpoints))]
-        public static void MaxHitpointsPrefix(ref ExplainedNumber __result, ref DefaultCharacterStatsModel __instance, CharacterObject character, bool includeDescriptions = false) {
+        public static void MaxHitpointsPostfix(ref ExplainedNumber __result, ref DefaultCharacterStatsModel __instance, CharacterObject character, bool includeDescriptions = false) {
             try {
                 int tier = __instance.GetTier(character);
                 int baseHealth = 100;
@@ -23,7 +22,7 @@ namespace BetterHealth.Patches
                     case 0:
 
                         if (character.IsPlayerCharacter) {
-                            baseHealth = BetterHealth.Settings.PlayerBaseHealth; 
+                            baseHealth = BetterHealth.Settings.PlayerBaseHealth;
                         } else {
                             baseHealth = BetterHealth.Settings.HeroBaseHealth;
                         }
@@ -97,7 +96,7 @@ namespace BetterHealth.Patches
                     }
 
                     //playerBonus = (float)(character.Level * BetterHealth.Settings.PlayerPercent);
-                    playerBonus = (BetterHealth.Settings.PlayerBaseHealth * (float)Math.Pow((1+ BetterHealth.Settings.PlayerPercent), character.Level)) - BetterHealth.Settings.PlayerBaseHealth;
+                    playerBonus = (BetterHealth.Settings.PlayerBaseHealth * (float)Math.Pow((1 + BetterHealth.Settings.PlayerPercent), character.Level)) - BetterHealth.Settings.PlayerBaseHealth;
                     if (playerBonus > 0) {
                         result.Add(playerBonus, new TextObject(Strings.PercentText, null));
                     }
